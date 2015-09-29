@@ -60,6 +60,8 @@ assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.'
 */
 
 //your code goes here
+assert('giraffe' === 'giraffe', 'this assert will pass');
+assert('zebra' === 'elephant', 'this will fail - a zebra is not the same as an elephant');
 
 /* ========================================================================
 ----------------- Meerkats (20 points total)-------------------------------
@@ -82,10 +84,23 @@ var sentence2 = 'Come over here so you can scratch my belly.';
 
 // your code goes here
 
+var sentence1 = sentence1.split(' ');
+var i;
+for (i = 0; i < sentence1.length; i++) {
+  sentence1[i] = 'chirp';
+}
+sentence1 = sentence1.join(' ') + '.';
+
 // TODO: part #2: use a while or do-while loop to replace the words in sentence 2
 // with 'chirp' (10 points)
 
 // your code goes here
+sentence2 = sentence2.split(' ');
+var i = 0;
+while (i < sentence2.length) {
+  sentence2[i] = 'chirp'; i++;
+}
+sentence2 = sentence2.join(' ') + '.';
 
 // Leave these assertions as-is! If they pass, your code works.
 assert(sentence1 === 'chirp chirp chirp.', 'sentence 1 should have 3 chirps');
@@ -108,6 +123,7 @@ var nextAnimal;
 // Assign one of your favorite animals to nextAnimal using Math.random() to pick
 
 // your code goes here
+nextAnimal = favoriteAnimals[Math.floor(Math.random() * favoriteAnimals.length)];
 
 assert(nextAnimal, 'assign something to nextAnimal');
 
@@ -124,10 +140,10 @@ assert(nextAnimal, 'assign something to nextAnimal');
 // don't require quotes for the code to work. Remove the unnecessary quotes.
 
 var animalExhibitStats = {
-  'numberOpen': 13,
+  numberOpen: 13,
   'number closed': 2,
   'petting-zoo-open': true,
-  'mostPopular': 'Lucky the Emperor Penguin',
+  mostPopular: 'Lucky the Emperor Penguin',
   '2ndMostPopular': 'Dumbo the Depressed Donkey'
 };
 
@@ -138,7 +154,7 @@ var animalExhibitStats = {
  notation with dot notation wherever possible.
 */
 
-assert(animalExhibitStats['numberOpen'] === 13, 'there should be 13 open exhibits');
+assert(animalExhibitStats.numberOpen === 13, 'there should be 13 open exhibits');
 assert(animalExhibitStats['number closed'] === 2, 'there should be 2 closed exhibits');
 assert(animalExhibitStats['petting-zoo-open'], 'hey! =( i was promised meerkats!');
 assert(animalExhibitStats['2ndMostPopular'] === 'Dumbo the Depressed Donkey',
@@ -149,6 +165,7 @@ assert(animalExhibitStats['2ndMostPopular'] === 'Dumbo the Depressed Donkey',
 // Use the above examples to guide you.
 
 // your assert goes here
+assert(animalExhibitStats.mostPopular === 'Lucky the Emperor Penguin', 'You screwed up');
 
 /* ==================================================================
 ----------------- Code Style (10 points) ----------------------------
